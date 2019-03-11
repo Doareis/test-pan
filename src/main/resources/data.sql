@@ -1,0 +1,9 @@
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('José da Silva', '123456789', 1234, 13456, 'Av Paulista, 800', 'São Paulo', 'SP');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('João da Silva', '181557517', 1244, 134455, 'Av Ibirapuera, 1800', 'São Paulo', 'SP');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('Douglas dos Reis', '18153427', 1244, 134455, 'Av Sabará, 1855', 'São Paulo', 'SP');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('Maria Reis', '12342456789', 1234, 13456, 'Av Beira Mar, 5800', 'Santos', 'SP');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('Maria Cintia', '12343456789', 9234, 44456, 'Av Beira Rio, 58', 'Porto Alegre', 'RS');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('Fernada da Fonseca', '51534356789', 1934, 48496, 'Rua da Paz, 58', 'Porto Alegre', 'RS');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('Ana Paula dos Santos', '554356789', 1934, 48496, 'Rua da Conceição, 548', 'Salvador', 'BA');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('Ana Paula Quirino', '83315789', 8834, 2496, 'Rua da Consolação, 548', 'Fortaleza', 'CE');
+insert into cliente (nome, cpf, numero_agencia, numero_conta, endereco, estado, municipio) values ('Laura da Silva Cruz', '844449434', 8564, 7796, 'Rua da Consolação, 548', 'Teresina', 'PI');
