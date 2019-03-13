@@ -2,7 +2,11 @@ package com.test.backend.testpan.controller;
 
 import com.test.backend.testpan.dto.EnderecoDTO;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -16,9 +20,13 @@ import org.springframework.web.client.RestTemplate;
 public class EnderecoController {
 
     @GetMapping(value = "/busca/{cep}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public EnderecoDTO busca(@PathVariable("cep") String cep) {
+    public ResponseEntity<EnderecoDTO> busca(@PathVariable("cep") String cep) {
         String url = String.format("https://viacep.com.br/ws/%s/json", cep);
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(url, EnderecoDTO.class);
+        try {
+            return restTemplate.getForEntity(url, EnderecoDTO.class);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
