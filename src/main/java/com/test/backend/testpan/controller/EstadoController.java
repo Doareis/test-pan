@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
  * @since Março 2019
  */
 @RestController
-@RequestMapping("api/estado")
+@RequestMapping("api/estados")
 public class EstadoController {
 
     private static final String URL = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
@@ -33,8 +33,8 @@ public class EstadoController {
         assert estados != null;
         Collections.sort(estados);
 
-        Collections.swap(estados, 0, estados.indexOf(new EstadoDTO(1, "SP", "São Paulo")));
-        Collections.swap(estados, 1, estados.indexOf(new EstadoDTO(1, "RJ", "Rio de Janeiro")));
+        Collections.swap(estados, 0, estados.indexOf(new EstadoDTO("SP", "São Paulo")));
+        Collections.swap(estados, 1, estados.indexOf(new EstadoDTO("RJ", "Rio de Janeiro")));
         return estados;
     }
 }
