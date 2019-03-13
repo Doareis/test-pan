@@ -1,6 +1,8 @@
 package com.test.backend.testpan.controller;
 
 import com.test.backend.testpan.dto.EstadoDTO;
+import java.util.Collections;
+import java.util.List;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
@@ -10,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Collections;
-import java.util.List;
-
 /**
  * @author doareis@gmail.com
  * @since Março 2019
@@ -21,13 +20,13 @@ import java.util.List;
 @RequestMapping("api/estado")
 public class EstadoController {
 
+    private static final String URL = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
+
     @GetMapping(value = "/busca", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<EstadoDTO> busca() {
-        String url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity response = restTemplate.exchange(url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<EstadoDTO>>() {
-                });
+        ResponseEntity response = restTemplate.exchange(URL, HttpMethod.GET, null,
+                new ParameterizedTypeReference<List<EstadoDTO>>() {});
 
         assert response != null;
         List<EstadoDTO> estados = (List<EstadoDTO>) response.getBody();

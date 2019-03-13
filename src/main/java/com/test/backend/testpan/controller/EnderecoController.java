@@ -19,9 +19,11 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("api/endereco")
 public class EnderecoController {
 
+    private static final String URL = "https://viacep.com.br/ws/%s/json";
+
     @GetMapping(value = "/busca/{cep}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EnderecoDTO> busca(@PathVariable("cep") String cep) {
-        String url = String.format("https://viacep.com.br/ws/%s/json", cep);
+        String url = String.format(URL, cep);
         RestTemplate restTemplate = new RestTemplate();
         try {
             return restTemplate.getForEntity(url, EnderecoDTO.class);
