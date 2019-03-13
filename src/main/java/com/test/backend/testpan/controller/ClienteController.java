@@ -26,7 +26,6 @@ public class ClienteController {
     private ClienteRepository clienteRepository;
 
     @GetMapping(value = "/busca/{cpf}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getCliente(@PathVariable("cpf") String cpf){
         Optional<Cliente> clienteOptional = clienteRepository.findByCpf(cpf);
         return clienteOptional.isPresent()

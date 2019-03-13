@@ -1,5 +1,6 @@
 package com.test.backend.testpan.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Data;
  * @since Março 2019
  */
 @Data
+@AllArgsConstructor(staticName = "of")
 public class EnderecoDTO {
     private String cep;
     private String logradouro;
